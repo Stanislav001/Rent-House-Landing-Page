@@ -1,8 +1,8 @@
 import { RiSearch2Line } from 'react-icons/ri';
-import CountryDropdown from "./CountryDropdown";
-import PropertyDropdown from "./PropertyDropdown";
+import CountryDropdown from "./dropdowns/CountryDropdown";
+import PropertyDropdown from "./dropdowns/PropertyDropdown";
 import { useHouse } from "../context/house-context";
-import PriceRangeDropdown from "./PriceRangeDropdown";
+import PriceRangeDropdown from "./dropdowns/PriceRangeDropdown";
 
 const Search = () => {
     const { handleClick } = useHouse();

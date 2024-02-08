@@ -1,43 +1,22 @@
-import { useState } from "react";
 import { Menu } from '@headlessui/react';
-import { useHouse } from "../context/house-context";
-import { RiArrowDownSLine, RiArrowUpSLine, RiWallet3Line } from "react-icons/ri";
+import { useState } from "react";
+import { useHouse } from "../../context/house-context";
+import { RiArrowDownSLine, RiArrowUpSLine, RiHome5Line } from "react-icons/ri";
 
-const PriceRangeDropdown = () => {
-    const { price, setPrice } = useHouse();
+const PropertyDropdown = () => {
+    const { property, setProperty, properties } = useHouse();
     const [isOpen, setIsOpen] = useState(false);
-
-    const prices = [
-        {
-            value: 'Price range (any)'
-        },
-        {
-            value: '100000 - 130000'
-        },
-        {
-            value: '130000 - 160000'
-        },
-        {
-            value: '160000 - 190000'
-        },
-        {
-            value: '190000 - 220000'
-        },
-        {
-            value: '220000 - 220000'
-        },
-    ]
 
     return (
         <Menu as={"div"} className={"dropdown relative"}>
             <Menu.Button onClick={() => setIsOpen(!isOpen)} className={'dropdown-btn w-full text-left'}>
-                <RiWallet3Line className="dropdown-icon-primary" />
+                <RiHome5Line className="dropdown-icon-primary" />
                 <div>
                     <div className="text-[15px] font-medium leading-tight">
-                        {price}
+                        {property}
                     </div>
                     <div className="text-[13px]">
-                        Choose price range
+                        Select your place
                     </div>
                 </div>
                 {isOpen ? (
@@ -48,12 +27,12 @@ const PriceRangeDropdown = () => {
             </Menu.Button>
 
             <Menu.Items className='dropdown-menu'>
-                {prices.map((price, index) => {
+                {properties.map((property, index) => {
                     return (
                         <Menu.Item
-                            onClick={() => setPrice(price?.value)}
+                            onClick={() => setProperty(property)}
                             className="cursor-pointer hover:to-violet-700 transition" as='li' key={index}>
-                            {price?.value}
+                            {property}
                         </Menu.Item>
                     )
                 })}
@@ -62,4 +41,4 @@ const PriceRangeDropdown = () => {
     )
 }
 
-export default PriceRangeDropdown;
+export default PropertyDropdown

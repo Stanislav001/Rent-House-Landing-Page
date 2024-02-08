@@ -11,7 +11,14 @@ const Banner = () => {
                     </h1>
 
                     <p className='max-w-[480px] mb-8'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque necessitatibus similique tempore doloremque expedita maiores quidem deleniti nobis eveniet. Enim?
+                        Unlock a world of possibilities as you embark on the journey to
+                        finding your dream home with us. Our platform offers an extensive
+                        selection of rental properties, each meticulously curated to meet
+                        your unique preferences and lifestyle needs. Whether you're seeking a
+                        cozy apartment, a spacious family home, or a luxurious retreat, we
+                        have the perfect option for you. With our seamless rental process
+                        and dedicated support team, your dream house is just a few clicks
+                        away. Don't wait any longer – begin your quest for the perfect rental today!
                     </p>
                 </div>
                 <div className='hidden flex-1 lg:flex justify-end items-end'>

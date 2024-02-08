@@ -1,11 +1,10 @@
 import HouseCard from "./HouseCard";
 import { Link } from 'react-router-dom';
 import { ImSpinner2 } from 'react-icons/im';
-import { useHouse } from "../context/house-context";
+import { useHouse } from "../../context/house-context";
 
 const HouseList = () => {
     const { houses, loading } = useHouse();
-
 
     if (loading) {
         return (<ImSpinner2 className="mx-auto animate-spin text-violet-700 text-4xl mt-[200px]" />)

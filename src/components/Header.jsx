@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom"
-import Logo from '../assets/img/logo.svg';
 
 const Header = () => {
     return (
         <header className="py-6 mb-12 border-b">
             <div className="container mx-auto flex justify-between items-center">
                 <Link to='/'>
-                    <img src={Logo} alt="Logo" />
+                    <h1 className='text-xl lg:text-[32px] font-semibold leading-none'>
+                        <span className='text-violet-700'>Your Brand</span>.
+                    </h1>
                 </Link>
 
                 <div className="flex items-center gap-6">

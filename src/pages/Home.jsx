@@ -1,5 +1,5 @@
 import Banner from "../components/Banner";
-import HouseList from "../components/HouseList";
+import HouseList from "../components/house/HouseList";
 
 const Home = () => {
     return (

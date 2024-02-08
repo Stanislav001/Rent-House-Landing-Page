@@ -1,6 +1,6 @@
 import { Menu } from '@headlessui/react';
 import { useState } from "react";
-import { useHouse } from "../context/house-context";
+import { useHouse } from "../../context/house-context";
 import { RiMapPinLine, RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
 
 const CountryDropdown = () => {
