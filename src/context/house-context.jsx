@@ -39,7 +39,69 @@ const HouseContextProvider = ({ children }) => {
 
   const handleClick = () => {
 
+    setLoading(true);
+
+    const isDefault = (input) => {
+      return input?.split(' ').includes('(any)');
+    }
+
+    const minPrice = parseInt(price.split(' ')[0])
+    const maxPrice = parseInt(price.split(' ')[2])
+
+    const filteredResult = housesData.filter((house) => {
+      const housePrice = parseInt(house.price);
+
+      if (house.country === country && house.type === property && housePrice >= minPrice && housePrice <= maxPrice) {
+        return house;
+      }
+
+      if (isDefault(country) && isDefault(property) && isDefault(price)) {
+        return house;
+      }
+
+      if (!isDefault(country) && isDefault(property) && isDefault(price)) {
+        return house.country === country;
+      }
+
+      if (isDefault(country) && !isDefault(property) && isDefault(price)) {
+        return house.type === property;
+      }
+
+      if (isDefault(country) && isDefault(property) && !isDefault(price)) {
+        if (housePrice >= minPrice && housePrice <= maxPrice) {
+          return house;
+        }
+      }
+
+      if (!isDefault(country) && !isDefault(property) && isDefault(price)) {
+        return house.country === country && house.type === property;
+      }
+
+      if (!isDefault(country) && isDefault(property) && !isDefault(price)) {
+        if (housePrice >= minPrice && housePrice <= maxPrice) {
+          return house.country === country;
+        }
+      }
+
+      if (isDefault(country) && !isDefault(property) && !isDefault(price)) {
+        if (housePrice >= minPrice && housePrice <= maxPrice) {
+          return house.type === property;
+        }
+      }
+    });
+
+    setTimeout(() => {
+      if (filteredResult?.length < 1) {
+        setHouses([]);
+      } else {
+        setHouses(filteredResult);
+      }
+
+      setLoading(false);
+    });
   }
+
+
 
   return (
     <HouseContext.Provider
