@@ -2,6 +2,10 @@
 
 Welcome to my Dream House Rental Landing Page repository! This project is a React template meticulously crafted using the dynamic capabilities of Tailwind CSS and React. The landing page is designed to captivate users with its modern aesthetics while offering seamless navigation and interaction.
 
+## Demo
+
+You can view a live demo of the Dream House Rental Landing Page [here](https://rent-house-landing-page.vercel.app/).
+
 ## Features
 
 - 🖥️ Responsive Design: Ensures a seamless experience across various devices and screen sizes.
